@@ -1,22 +1,5 @@
-# DATA STRUCTURES AND ALGORITHMS TEMPLATE README
-## Travis Badge
-<!-- YOUR TRAVIS CI BADGE HERE -->
+# LAB 31 REDUX BUDGET TRACKER APP
+[![Build Status](https://travis-ci.org/LizabethPetersen/31-redux-budget-tracker.svg?branch=master)](https://travis-ci.org/LizabethPetersen/31-redux-budget-tracker)
 
-## Challenge
-<!-- YOUR PROBLEM DOMAIN HERE -->
-
-## Whiteboarding Solution:
- <!--YOUR GITHUB IMAGE URL BELOW  -->
-![alt text](YOUR-IMAGE-URL-HERE.jpg)
-
-## Code Solution
-<!-- YOUR CODE HERE -->
-
-<!-- ====================================================================== -->
-
-# LAB TEMPLATE README
-## Travis Badge
-<!-- YOUR TRAVIS CI BADGE HERE -->
-
-## Code
-<!-- YOUR CODE DESCRIPTION HERE -->
+## Description
+The Budget Tracker app is a simple app to track user budget expenses. There is a form with inputs for a category and budgeted amount, and the app will return a total budget from the included categories. There are options to update and delete each expense category.

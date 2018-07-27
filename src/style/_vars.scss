@@ -1,21 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light"');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Jura');
+
+$color-bg: #fdfcfc;
+
+// palette;
+$color-main: #AF473C;
+$color-secondary: #945D60;
+$color-tertiary: #626E60;
+$color-charcoal: #3C3C3C;
 
 $color-error: #ff0000;
-$color-secondary: #F0DCB6;
-$color-primary: #ff777a;
+
 $color-success: #77ff7a;
+
 $color-white: #fff;
 $color-black: #000;
+
 $color-lightgrey: #B5BAC3;
 $color-grey: #7A7D84;
 $color-darkgrey: #6E7177;
-$color-darkcyan: #008b8b;
 
 $pad: 0.5em;
 
-$acme-font: 'Acme', sans-serif;
-$shadow-font: 'Shadows Into Light', cursive;
-$font-primary: 'Lato', sans-serif;
-$font-secondary: 'Roboto Mono', monospace;
+$font-primary: 'Jura', sans-serif;
+// get the medium or semi-bold of this, for my headers
+$font-secondary: 'Josefin Slab', serif;
+$font-default: 'Arial', 'Helvetica', sans-serif;
 
 $bg-texture: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+
+/*
+font-family: 'Jura', sans-serif;
+font-family: 'Josefin Slab', serif;
+*/

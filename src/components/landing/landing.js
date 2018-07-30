@@ -14,7 +14,7 @@ const mapStateToProps = (store) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: data => dispatch(categoryActions.create(data)),
-  },
+  };
 };
 
 class Landing extends React.Component {

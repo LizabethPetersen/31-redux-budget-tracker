@@ -13,7 +13,6 @@ export default class CategoryForm extends React.Component {
     this.state = this.props.category || defaultState;
   }
 
-  // this is my problem area, the handleChange function. it is not recognizing both values
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -26,7 +25,6 @@ export default class CategoryForm extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'These are my props');  // eslint-disable-line
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './categoryForm.scss';
 
 const defaultState = {
   name: '',
@@ -12,14 +13,16 @@ export default class CategoryForm extends React.Component {
     this.state = this.props.category || defaultState;
   }
 
+  // this is my problem area, the handleChange function. it is not recognizing both values
   handleChange = (event) => {
-    const { value } = event.target;
-    this.setState({ name: value, amount: value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState);
   }
 
   render() {

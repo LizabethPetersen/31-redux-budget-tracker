@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form/categoryForm';
 import * as categoryActions from '../../action/categoryActions';
+import './item.scss';
 
 const mapDispatchToProps = (dispatch) => {
   return {

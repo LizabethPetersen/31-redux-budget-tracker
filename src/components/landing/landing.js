@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import * as categoryActions from '../../action/categoryActions';
 import CategoryForm from '../category-form/categoryForm';
 import Category from '../category-item/categoryItem';
+import './landing.scss';
 
 const mapStateToProps = (store) => {
   return {

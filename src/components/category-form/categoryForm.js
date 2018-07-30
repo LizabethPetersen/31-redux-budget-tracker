@@ -14,12 +14,12 @@ export default class CategoryForm extends React.Component {
 
   handleChange = (event) => {
     const { value } = event.target;
-    this.setState({ name: value });
+    this.setState({ name: value, amount: value });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState.onComplete(this.state);
+    this.props.onComplete(this.state);
   }
 
   render() {
@@ -33,14 +33,14 @@ export default class CategoryForm extends React.Component {
       <input
       type="text"
       name="name"
-      placeholder="Category Name"
-      value={ this.state.value }
+      placeholder="Category"
+      value={ this.state.name }
       onChange={ this.handleChange }
       />
       <input
       type="number"
       name="amount"
-      placeholder="Budgeted Amount"
+      placeholder="Amount Budgeted"
       value={ this.state.amount }
       onChange={ this.handleChange }
       />

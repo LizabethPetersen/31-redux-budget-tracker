@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import CategoryForm from '../category-form/categoryForm';
 import * as categoryActions from '../../action/categoryActions';
 
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-class Category extends React.Comcponents {
+class Category extends React.Component {
   render() {
     const {
       category,

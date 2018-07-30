@@ -1,5 +1,5 @@
 import React from 'react';
-import connect from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as categoryActions from '../../action/categoryActions';
 import CategoryForm from '../category-form/categoryForm';
@@ -14,8 +14,9 @@ const mapStateToProps = (store) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: data => dispatch(categoryActions.create(data)),
-  },
+  };
 };
+
 
 class Landing extends React.Component {
   render() {

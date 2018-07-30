@@ -8,8 +8,8 @@ import App from './components/app/app';
 import reducer from './reducer/main';
 import './style/main.scss';
 
-import reporter from '../src/lib/middleware/redux-reporter';
-import session from '../src/lib/middleware/redux-session';
+import reporter from './lib/middleware/redux-reporter';
+import session from './lib/middleware/redux-session';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(reporter, session)));
 

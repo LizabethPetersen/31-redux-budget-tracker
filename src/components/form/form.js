@@ -6,7 +6,7 @@ const defaultState = {
   amount: 0,
 };
 
-export default class CategoryForm extends React.Component {
+export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.category || defaultState;
@@ -50,7 +50,7 @@ export default class CategoryForm extends React.Component {
   }
 }
 
-CategoryForm.propTypes = {
+Form.propTypes = {
   onComplete: PropTypes.func,
   category: PropTypes.object,
 };

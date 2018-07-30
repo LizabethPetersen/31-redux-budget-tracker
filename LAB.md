@@ -30,7 +30,7 @@ Your lab directory must include
 * **src/component/** -- containing your component folders
 * **src/component/app/index.js** -- containing App component, provider, browser router, and route to Dashboard
 * **src/component/dashboard/index.js** -- containing Dashboard component
-* **src/component/category-form/index.js** -- containing CategoryForm component
+* **src/component/category-form/index.js** -- containing Form component
 * **src/component/category-item/index.js** -- containing CategoryItem component
 * **src/style** -- containing your sass
 * **src/style/main.scss** -- for importing and including reset and base
@@ -67,9 +67,9 @@ App
   Provider
     BrowserRouter
       Route / Dashboard
-        CategoryForm -- for creating categories
+        Form -- for creating categories
         [Category Item]
-           CategoryForm  -- for updating categories
+           Form  -- for updating categories
 ```
 
 ###### App Component
@@ -78,10 +78,10 @@ The App component should set up the Provider for the redux store and the Router.
 ###### Dashboard Component
 * should be displayed on the `/` route
 * should use react-redux's `connect` to map state and dispatchable methods to props
-* should display a `CategoryForm` for adding categories to the app state
+* should display a `Form` for adding categories to the app state
 * should display a `CategoryItem` for each category in the app state
 
-###### CategoryForm Component
+###### Form Component
 * should expect an `onComplete` prop to be a function
   * that function should be invoked with the CategoryForms state when the form is submitted
 * should expect a `buttonText` prop to configure the submit buttons text
@@ -91,7 +91,7 @@ The App component should set up the Provider for the redux store and the Router.
 * should display the category's name and budget
 * should display a delete button
   * `onClick` the category should be removed from the application state
-* should display a CategoryForm
+* should display a Form
   * `onComplete` the form should update the component in the application state
 
 #### Tests (not required, this is a stretch goal)

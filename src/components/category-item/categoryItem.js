@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Form from '../form/form';
 import * as categoryActions from '../../action/categoryActions';
+import './item.scss';
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categoryRemove: data => dispatch(categoryActions.remove(data)),
+    categoryUpdate: data => dispatch(categoryActions.update(data)),
+  };
+};
 
 class Category extends React.Component {
   render() {
@@ -27,14 +35,6 @@ Category.propTypes = {
   key: PropTypes.number,
   categoryRemove: PropTypes.func,
   categoryUpdate: PropTypes.func,
-};
-
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    categoryRemove: data => dispatch(categoryActions.remove(data)),
-    categoryUpdate: data => dispatch(categoryActions.update(data)),
-  };
 };
 
 export default connect(null, mapDispatchToProps)(Category);

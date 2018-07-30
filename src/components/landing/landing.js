@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import * as categoryActions from '../../action/categoryActions';
 import Form from '../form/form';
 import Category from '../category-item/categoryItem';
+import './landing.scss';
 
 class Landing extends React.Component {
   render() {

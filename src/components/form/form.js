@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './categoryForm.scss';
 
 const defaultState = {
   name: '',
@@ -13,17 +14,17 @@ export default class Form extends React.Component {
   }
 
   handleChange = (event) => {
-    const { value } = event.target;
-    this.setState({ name: value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState.onComplete(this.state);
+    this.props.onComplete(this.state);
+    this.setState(defaultState);
   }
 
   render() {
-    console.log(this.props, 'These are my props');  // eslint-disable-line
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
@@ -33,14 +34,14 @@ export default class Form extends React.Component {
       <input
       type="text"
       name="name"
-      placeholder="Category Name"
-      value={ this.state.value }
+      placeholder="Category"
+      value={ this.state.name }
       onChange={ this.handleChange }
       />
       <input
       type="number"
       name="amount"
-      placeholder="Budgeted Amount"
+      placeholder="Amount Budgeted"
       value={ this.state.amount }
       onChange={ this.handleChange }
       />

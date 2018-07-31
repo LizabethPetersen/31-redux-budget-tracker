@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './categoryForm.scss';
+import './form.scss';
 
 const defaultState = {
   name: '',

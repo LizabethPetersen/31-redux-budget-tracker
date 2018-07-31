@@ -1,10 +1,10 @@
 import uuid from 'uuid/v4';
 
-const create = ({ name }) => ({
+const create = ({ name, amount }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     name,
-    amount: Number,
+    amount,
     id: uuid(),
     createdOn: new Date(),
   },

@@ -17,7 +17,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Day 31 Redux App',
+    title: 'Day 32 Redux App',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),

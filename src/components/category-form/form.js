@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './form.scss';
 
 const defaultState = {
-  name: '',
+  title: '',
   amount: 0,
 };
 
@@ -28,22 +28,22 @@ export default class Form extends React.Component {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
-      onSubmit={ this.handleSubmit }
-      className="category-form"
+        onSubmit={ this.handleSubmit }
+        className="category-form"
       >
       <input
-      type="text"
-      name="name"
-      placeholder="Category"
-      value={ this.state.name }
-      onChange={ this.handleChange }
+        type="text"
+        name="title"
+        placeholder="Category"
+        value={ this.state.title }
+        onChange={ this.handleChange }
       />
       <input
-      type="number"
-      name="amount"
-      placeholder="Amount Budgeted"
-      value={ this.state.amount }
-      onChange={ this.handleChange }
+        type="number"
+        name="amount"
+        placeholder="Amount Budgeted"
+        value={ this.state.amount }
+        onChange={ this.handleChange }
       />
       <button type="submit">{ buttonText }</button>
       </form>

@@ -1,1 +1,8 @@
 @import '../../style/vars';
+
+.app {
+  h1 {
+    color: $color-main;
+    padding-bottom: 8px;
+  }
+}

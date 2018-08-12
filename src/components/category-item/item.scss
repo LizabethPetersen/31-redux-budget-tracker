@@ -1,1 +1,8 @@
 @import '../../style/vars';
+
+.item {
+  h5 {
+    color: $color-secondary;
+    padding-bottom: 5px;
+  }
+}

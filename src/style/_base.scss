@@ -4,7 +4,9 @@
 html, body {
   position: relative; 
   font-family: $font-primary;
+  margin: 20px;
 }
+
 head, script, link  { display: none; }
 p { display: inline-block; }
 span,em,strong { display: inline; }
@@ -14,6 +16,10 @@ strong { font-weight: bold; }
 body {
   background: $color-bg;
   font-size: 16px;
+}
+
+p {
+  font-family: $font-secondary;
 }
 
 #root {
@@ -40,7 +46,7 @@ label {
 }
 
 textarea, input {
-  background: $color-quaternary;
+  background: $color-charcoal;
   border: none;
   padding: 15px;
   border-radius: 3px;

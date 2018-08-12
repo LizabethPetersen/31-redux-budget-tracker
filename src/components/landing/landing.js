@@ -24,11 +24,12 @@ class Landing extends React.Component {
     const { categories, categoryCreate } = this.props;
     return (
       <div>
-        <CategoryForm onComplete={categoryCreate}/>
+        <CategoryForm onComplete={categoryCreate} />
         {
-         categories.map((currentCategory, i) => <Category category={currentCategory} key={i} />)
+          categories.map((currentCategory, i) => <Category category={currentCategory} key={i} />)
         }
-        </div>
+      </div>
+
     );
   }
 }

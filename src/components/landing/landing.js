@@ -25,7 +25,7 @@ class Landing extends React.Component {
       <div>
         <Form onComplete={ categoryCreate }/>
         {
-         categories.map((currentCategory, i) => <Category category={currentCategory} key={i} />)
+         categories.map(category => <Category category={category} key={category.id} />)
         }
         </div>
     );

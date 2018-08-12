@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import './expense-form.scss';
 
 const emptyState = {
-  content: '',
+  amount: 0,
 };
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.expense || emptyState;
+    this.state = this.props.expense || emptyState;
   }
 
   handleSubmit = (event) => {
@@ -29,7 +29,7 @@ export default class ExpenseForm extends React.Component {
 
   render() {
     const { expense } = this.props;
-    const buttonText = expense ? 'Update Expense' : 'Delete Expense';
+    const buttonText = expense ? 'Update Expense' : 'Create Expense';
     const formText = expense ? `Update ${expense.content} Expense` : 'Create Expense';
     return (
       <form 
@@ -37,12 +37,12 @@ export default class ExpenseForm extends React.Component {
         data-cy='expense-form'
         onSubmit={ this.handleSubmit }
       >
-        <label htmlFor="content">{ formText }</label>
+        <label htmlFor="expense">{ formText }</label>
         <input
           type="text"
-          name="content"
+          name="amount"
           placeholder="Enter New Expense"
-          value={ this.state.content }
+          value={ this.state.amount }
           onChange={ this.handleChange }
           />
           <button type="submit">{ buttonText }</button>

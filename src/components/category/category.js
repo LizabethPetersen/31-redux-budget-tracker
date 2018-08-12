@@ -33,7 +33,7 @@ class Category extends React.Component {
 
     return (
       <div className="category" key={key}>
-      <h1>{ category.name }</h1>
+      <h1>{ category.title }</h1>
       <button onClick={ () => categoryRemove(category) }>Delete Category</button>
       <Form category={ category } onComplete={ categoryUpdate } />
 

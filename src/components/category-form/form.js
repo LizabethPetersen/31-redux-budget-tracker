@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './form.scss';
 
-const defaultState = {
-  name: '',
+const emptyState = {
+  title: '',
   amount: 0,
 };
 
 export default class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.category || defaultState;
+    this.state = this.props.category || emptyState;
   }
 
   handleChange = (event) => {
@@ -21,7 +21,7 @@ export default class Form extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onComplete(this.state);
-    this.setState(defaultState);
+    this.setState(emptyState);
   }
 
   render() {
@@ -33,9 +33,9 @@ export default class Form extends React.Component {
       >
       <input
       type="text"
-      name="name"
+      name="title"
       placeholder="Category"
-      value={ this.state.name }
+      value={ this.state.title }
       onChange={ this.handleChange }
       />
       <input

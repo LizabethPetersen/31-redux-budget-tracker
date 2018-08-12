@@ -6,6 +6,7 @@ html, body {
   font-family: $font-primary;
   margin: 20px;
 }
+
 head, script, link  { display: none; }
 p { display: inline-block; }
 span,em,strong { display: inline; }
@@ -15,6 +16,10 @@ strong { font-weight: bold; }
 body {
   background: $color-bg;
   font-size: 16px;
+}
+
+p {
+  font-family: $font-secondary;
 }
 
 #root {
@@ -29,6 +34,7 @@ blockquote {
 @for $i from 6 through 1 {
   h#{$i} {
     font-size: 9/($i + 2) * 1em;;
+    margin-top: 5px;
   }
 }
 
@@ -64,7 +70,8 @@ button {
 
 button,input[type="submit"] {
   background: $color-lightgrey;
-  padding: $pad;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   border-radius: 3px;
 

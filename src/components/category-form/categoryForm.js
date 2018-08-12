@@ -10,7 +10,7 @@ const defaultState = {
 export default class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = defaultState;
+    this.state = this.props.category || defaultState;
   }
 
   handleChange = (event) => {
@@ -25,27 +25,29 @@ export default class CategoryForm extends React.Component {
   }
 
   render() {
+    console.log(this.props, 'hitting the props');
+
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
-      <form
-        className="category"
-        onSubmit={ this.handleSubmit } >
+      <form className="category"
+        onSubmit={this.handleSubmit}
+      >
       <input
         type="text"
         name="title"
         placeholder="Category"
-        value={ this.state.title }
-        onChange={ this.handleChange }
+        value={this.state.title}
+        onChange={this.handleChange}
       />
       <input
         type="number"
         min="0.00"
         name="amount"
         placeholder="0.00"
-        value={ this.state.amount }
-        onChange={ this.handleChange }
+        value={this.state.amount}
+        onChange={this.handleChange}
       />
-      <button type="submit">{ buttonText }</button>
+      <button type="submit">{buttonText}</button>
       </form>
     );
   }

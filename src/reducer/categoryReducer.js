@@ -1,6 +1,6 @@
-const emptyState = [];
+const defaultState = [];
 
-export default (state = emptyState, { type, payload }) => {
+export default (state = defaultState, { type, payload }) => {
   switch (type) {
     case 'CATEGORY_CREATE':
       return [...state, payload];

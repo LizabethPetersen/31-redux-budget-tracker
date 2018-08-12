@@ -6,7 +6,7 @@ const create = ({ title, amount }) => ({
     title,
     amount,
     id: uuid(),
-    createdOn: new Date(),
+    createdOn: new Date().toLocaleDateString(),
   },
 });
 

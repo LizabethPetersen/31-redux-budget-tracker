@@ -12,16 +12,13 @@ const create = ({ title, amount }) => ({
 
 const update = category => ({
   type: 'CATEGORY_UPDATE',
-  payload: {
-    category,
-  },
+  payload: category,
 });
 
 const remove = category => ({
   type: 'CATEGORY_REMOVE',
-  payload: {
-    category,
-  },
+  payload: category,
+
 });
 
 export { create, update, remove };

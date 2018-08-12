@@ -5,21 +5,29 @@ import ExpenseForm from '../expense-form/expense-form';
 import * as expenseActions from '../../action/expenseActions';
 
 const mapDispatchToProps = dispatch => ({
-  expenseRemove: data => dispatch(expenseActions.removeExpense(data)),
-  expenseUpdate: data => dispatch(expenseActions.updateExpense(data)),
+  removeExpense: data => dispatch(expenseActions.removeExpense(data)),
+  updateExpense: data => dispatch(expenseActions.updateExpense(data)),
 });
 
 class Expense extends React.Component {
   render() {
-    const { expense, expenseRemove, expenseUpdate } = this.props;
+    const { 
+      expense,
+      key,
+      categoryId, 
+      removeExpense, 
+      updateExpense,
+    } = this.props;
+
     return (
-      <div className="expense" data-cy="expense">
-        <p>{ expense.content }</p>
-        <button onClick={ () => expenseRemove(expense) }>Delete</button>
-        <ExpenseForm
-          expense={ expense }
-          onComplete={ expenseUpdate }
-        />
+      <div className="expense" key={key} data-cy="expense">
+        <h4>Budget Item: { expense.title }, Amount: ${ expense.amount }</h4>
+          <button onClick={() => removeExpense(expense) }>Delete Expense</button>
+          <ExpenseForm
+            expense={ expense }
+            categoryId={ categoryId }
+            onComplete={ updateExpense }
+          />
       </div>
     );
   }
@@ -27,8 +35,10 @@ class Expense extends React.Component {
 
 Expense.propTypes = {
   expense: PropTypes.object,
-  expenseRemove: PropTypes.func,
-  expenseUpdate: PropTypes.func,
+  key: PropTypes.number,
+  categoryId: PropTypes.string,
+  removeExpense: PropTypes.func,
+  updateExpense: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(Expense);

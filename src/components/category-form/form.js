@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './form.scss';
 
-const emptyState = {
+const defaultState = {
   title: '',
   amount: 0,
 };
@@ -10,7 +10,7 @@ const emptyState = {
 export default class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.category || emptyState;
+    this.state = this.props.category || defaultState;
   }
 
   handleChange = (event) => {
@@ -21,29 +21,29 @@ export default class Form extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onComplete(this.state);
-    this.setState(emptyState);
+    this.setState(defaultState);
   }
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
-      onSubmit={ this.handleSubmit }
-      className="category-form"
+        onSubmit={ this.handleSubmit }
+        className="category-form"
       >
       <input
-      type="text"
-      name="title"
-      placeholder="Category"
-      value={ this.state.title }
-      onChange={ this.handleChange }
+        type="text"
+        name="title"
+        placeholder="Category"
+        value={ this.state.title }
+        onChange={ this.handleChange }
       />
       <input
-      type="number"
-      name="amount"
-      placeholder="Amount Budgeted"
-      value={ this.state.amount }
-      onChange={ this.handleChange }
+        type="number"
+        name="amount"
+        placeholder="Amount Budgeted"
+        value={ this.state.amount }
+        onChange={ this.handleChange }
       />
       <button type="submit">{ buttonText }</button>
       </form>

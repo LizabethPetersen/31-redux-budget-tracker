@@ -1,9 +1,9 @@
-const emptyState = {};
+const defaultState = {};
 
-export default (state = emptyState, { type, payload }) => {
+export default (state = defaultState, { type, payload }) => {
   let categoryId;
-  let categoryExpenses;
-  let updatedExpenses;
+  let categoryExpense;
+  let updatedExpense;
   let updatedState;
 
   switch (type) {
@@ -15,19 +15,19 @@ export default (state = emptyState, { type, payload }) => {
       return updatedState;
     case 'EXPENSE_CREATE':
       categoryId = payload.categoryId; // eslint-disable-line
-      categoryExpenses = state[categoryId];  
-      updatedExpenses = { ...categoryExpenses, payload };
-      return { ...state, [categoryId]: updatedExpenses };
+      categoryExpense = state[categoryId];  
+      updatedExpense = { ...categoryExpense, payload };
+      return { ...state, [categoryId]: updatedExpense };
     case 'EXPENSE_UPDATE':
       categoryId = payload.categoryId; // eslint-disable-line
-      categoryExpenses = state[categoryId];
-      updatedExpenses = categoryExpenses.map(expense => (expense.id === payload.id ? payload : expense)); // eslint-disable-line
-      return { ...state, [categoryId]: updatedExpenses };
+      categoryExpense = state[categoryId];
+      updatedExpense = categoryExpenses.map(expense => (expense.id === payload.id ? payload : expense)); // eslint-disable-line
+      return { ...state, [categoryId]: updatedExpense };
     case 'EXPENSE_REMOVE':
       categoryId = payload.categoryId; // eslint-disable-line
-      categoryExpenses = state[categoryId];
-      updatedExpenses = categoryExpenses.filter(expense => (expense.id !== payload.id));
-      return { ...state, [categoryId]: updatedExpenses };
+      categoryExpense = state[categoryId];
+      updatedExpense = categoryExpense.filter(expense => (expense.id !== payload.id));
+      return { ...state, [categoryId]: updatedExpense };
     default:
       return state;
   }

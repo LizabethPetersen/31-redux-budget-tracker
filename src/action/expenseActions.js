@@ -1,11 +1,13 @@
 import uuid from 'uuid/v4';
 
-const createExpense = ({ amount, categoryId }) => ({
+const createExpense = ({ title, amount, categoryId }) => ({
   type: 'EXPENSE_CREATE',
   payload: {
+    title,
     amount,
-    categoryId,
     id: uuid(),
+    timestamp: new Date(),
+    categoryId,
   },
 });
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ExpenseForm from '../expense-form/expense-form';
 import * as expenseActions from '../../action/expenseActions';
+import ExpenseForm from '../expense-form/expense-form';
 
 const mapDispatchToProps = dispatch => ({
   removeExpense: data => dispatch(expenseActions.removeExpense(data)),
@@ -13,21 +13,21 @@ class Expense extends React.Component {
   render() {
     const { 
       expense,
-      key,
-      categoryId, 
+      category, 
       removeExpense, 
       updateExpense,
     } = this.props;
 
     return (
-      <div className="expense" key={key} data-cy="expense">
-        <h4>Budget Item: { expense.title }, Amount: ${ expense.amount }</h4>
-          <button onClick={() => removeExpense(expense) }>Delete Expense</button>
+      <div className="expense" data-cy="expense">
+        <h4>Expense: { expense.title }, Amount: ${ expense.amount }</h4>
           <ExpenseForm
             expense={ expense }
-            categoryId={ categoryId }
             onComplete={ updateExpense }
-          />
+            category={ category }
+            />
+            <button onClick={() => 
+              removeExpense({ ...expense, categoryId: category._id }) }>Delete Expense</button>
       </div>
     );
   }
@@ -35,8 +35,7 @@ class Expense extends React.Component {
 
 Expense.propTypes = {
   expense: PropTypes.object,
-  key: PropTypes.number,
-  categoryId: PropTypes.string,
+  category: PropTypes.object,
   removeExpense: PropTypes.func,
   updateExpense: PropTypes.func,
 };

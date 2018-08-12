@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Form from '../category-form/form';
 import * as categoryActions from '../../action/categoryActions';
-import Expense from '../expense/expense';
-import * as expenseActions from '../../action/expenseActions';
 import ExpenseForm from '../expense-form/expense-form';
+import * as expenseActions from '../../action/expenseActions';
+import Expense from '../expense/expense';
 import './category.scss';
 
 const mapDispatchToProps = (dispatch) => {
@@ -16,38 +16,40 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const mapStateToProps = (store, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    expenses: store.expenses[ownProps.categoryId],
+    expenses: state.expenses,
   };
 };
 
 class Category extends React.Component {
   render() {
     const {
-      category,
       expenses,
+      createExpense,
+      category,
       key,
       categoryRemove,
       categoryUpdate,
-      createExpense,
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
 
     return (
-      <div className="category" key={key}>
-        <h2>Budget Category: {category.title}</h2>
-          <h4>Budget: ${category.amount},
-          Expenses: {categoryExpenses}</h4>
-          <button onClick={() => categoryRemove(category) }>Delete Category</button>
-            <Form category={category} onComplete={categoryUpdate}/>
-            <ExpenseForm onComplete={createExpense} categoryId={category.id} />
-        <div className="expense-list">
-        { 
-          expenses.map(expense => 
-          <Expense expense={expense} key={expense.id} categoryId={category.id}/>) 
-        }
+      <div className="category" key={key} data-cy="category">
+        <h6>Budget Category: { category.title } </h6>
+        <button onClick={() => categoryRemove(category)}>Delete Category</button>
+        <Form category={category} onComplete={categoryUpdate}
+        />
+        <div className="expenses-form">
+          <h6>Actual Expenses</h6>
+            <ExpenseForm category={category}
+              onComplete={createExpense} />
+            <div className="expenses-list">
+            {
+              categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />)
+            }
+          </div>
         </div>
       </div>
     );
@@ -56,11 +58,11 @@ class Category extends React.Component {
 
 Category.propTypes = {
   category: PropTypes.object,
-  expenses: PropTypes.array,
   key: PropTypes.number,
   categoryRemove: PropTypes.func,
   categoryUpdate: PropTypes.func,
   createExpense: PropTypes.func,
+  expenses: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

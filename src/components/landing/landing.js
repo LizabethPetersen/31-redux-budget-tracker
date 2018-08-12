@@ -27,11 +27,11 @@ class Landing extends React.Component {
           <Form onComplete={ categoryCreate }/>
         </div>
 
-        <div className="category-list">
+        <li className="category-list">
           {
            categories.map(category => <Category category={category} key={category.id} />)
           }
-        </div>
+        </li>
       </div>
     );
   }

@@ -5,9 +5,9 @@ const createExpense = ({ title, amount, categoryId }) => ({
   payload: {
     title,
     amount,
+    categoryId,
     id: uuid(),
     timestamp: new Date(),
-    categoryId,
   },
 });
 
